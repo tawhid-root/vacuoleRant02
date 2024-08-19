@@ -1,0 +1,249 @@
+/*======================================
+ main place where all content will stay
+========================================*/
+#main {
+  /*grid properties*/
+  display: grid;
+  justify-content: stretch;
+  align-items: stretch;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 60vh 1fr;
+  grid-template-areas:
+    "."
+    "heading"
+    ".";
+  /*normale properties*/
+  overflow: hidden;
+  min-height: 100vh;
+  padding: 7px;
+  text-align: center;
+  /*background properties*/
+  background-image: url("../../images/busWallpaper.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#main > div {
+  /*just normal design for all div inside main , don't have any alignment design*/
+  border-radius: 10px;
+  padding: 20px 35px;
+  backdrop-filter: blur(20px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#main > :not(.heading) {
+  display: none;
+}
+
+/*---------------------------------------
+heading 
+------------------------------------------*/
+#main > .heading {
+  grid-area: heading;
+  display: grid;
+  align-items: center;
+  justify-content: stretch;
+}
+
+.heading > a {
+  font-size: large;
+  font-weight: bold;
+  border-radius: 19px;
+  padding: 10px 18px;
+  border: none;
+
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.heading > a:nth-child(odd) {
+  background-color: black;
+  color: white;
+}
+
+/*------------------------------------------
+social links
+--------------------------------------------*/
+#main > .socialLinks {
+  grid-area: socialLinks;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 5px;
+}
+#main > .socialLinks > a {
+  background-color: rgb(20, 20, 20);
+  font-size: 25px;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*------------------------------------------------
+sub page links
+--------------------------------------------------*/
+#main > .subPageLinks {
+  grid-area: subPageLinks;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 5px;
+}
+#main > .subPageLinks > a {
+  background-color: rgb(20, 20, 20);
+  font-size: 25px;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*-----------------------------------------------------
+contact Us
+-------------------------------------------------------*/
+#main > .contactUs {
+  grid-area: contactUs;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 5px;
+}
+#main > .contactUs > * {
+  background-color: rgb(20, 20, 20);
+  font-size: 25px;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*=======================================
+Responsive design for home page
+==========================================*/
+
+/* Mobile S */
+@media (min-width: 320px) {
+}
+
+/* Mobile M */
+@media (min-width: 375px) {
+}
+
+/* Mobile L */
+@media (min-width: 425px) {
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  /*showing social links div*/
+  #main > .socialLinks {
+    display: grid;
+  }
+
+  #main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 60vh 1fr;
+    gap: 2vw;
+    justify-content: stretch;
+    align-items: stretch;
+    grid-template-areas:
+      ". ."
+      "heading socialLinks"
+      ". .";
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  #main > .heading {
+    font-size: 29px;
+  }
+  #main > .socialLinks {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .heading > a {
+    font-size: 29px;
+  }
+  .heading > :first-child:hover {
+    transform: scale(1.05);
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    background-color: black;
+    color: white;
+  }
+  .heading > :last-child:hover {
+    transform: scale(1.05);
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+    background-color: white;
+    color: black;
+  }
+  #main > .socialLinks > a {
+    font-size: 83px;
+    color: rgb(200, 200, 200);
+    transition: background-color 0.3s ease;
+  }
+  #main > .socialLinks > a:hover {
+    background-color: rgb(40, 40, 40);
+  }
+}
+
+/* Laptop L */
+@media (min-width: 1440px) {
+  #main {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20vh 40vh 40vh 20vh;
+    gap: 5vh 5vw;
+    grid-template-areas:
+      " . . . ."
+      "heading heading heading heading"
+      "socialLinks socialLinks subPageLinks subPageLinks"
+      ". . . .";
+  }
+  #main > .subPageLinks {
+    display: grid;
+  }
+  #main > .subPageLinks > * {
+    font-size: 83px;
+    color: rgb(200, 200, 200);
+    transition: background-color 0.3s ease;
+  }
+  #main > .subPageLinks > *:hover {
+    background-color: rgb(40, 40, 40);
+  }
+  .subPageLinks > a {
+    font-size: 39px;
+  }
+}
+
+/* 4k */
+@media (min-width: 2560px) {
+  #main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 20vh 40vh 40vh 20vh;
+    gap: 5vh 5vw;
+    grid-template-areas:
+      " . ."
+      "heading contactUs"
+      "socialLinks subPageLinks"
+      ". . ";
+  }
+  #main > .contactUs {
+    display: grid;
+  }
+  #main > .contactUs > * {
+    font-size: 47px;
+    color: rgb(200, 200, 200);
+    transition: background-color 0.3s ease;
+  }
+  #main > .contactUs > *:hover {
+    background-color: rgb(40, 40, 40);
+  }
+  #main .subPageLinks > a {
+    font-size: 69px;
+  }
+  #main > .heading > * {
+    font-size: 68px;
+  }
+}

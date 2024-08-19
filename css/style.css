@@ -1,0 +1,331 @@
+/*==========================
+    reset default Style 
+ ============================*/
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(18, 18, 18);
+  color: rgb(255, 255, 255);
+  font-family: Arial, sans-serif;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+ul {
+  list-style: none;
+}
+p {
+  color: rgb(200, 200, 200);
+  margin-top: 8px;
+}
+button {
+  background-color: transparent;
+  border: none;
+  /* font-size: medium; */
+}
+
+/*===========================
+   utility     
+ ============================*/
+.active {
+  background-color: rgb(64, 64, 64);
+}
+
+/*===========================
+   template      
+ ============================*/
+
+#header {
+  grid-area: header;
+}
+#main {
+  grid-area: main;
+}
+#footer {
+  grid-area: footer;
+}
+
+#container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: grid;
+  grid-template-rows: 60px 1fr auto;
+  grid-template-columns: 1fr;
+
+  position: relative;
+
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+/*-------------------------------------
+header component
+----------------------------------------*/
+
+#header {
+  position: sticky;
+  top: 0px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: 100%;
+  grid-template-columns: 1fr auto;
+  z-index: 1;
+
+  padding: 0px 1rem;
+  background-color: rgb(30, 30, 30);
+  text-align: center;
+
+  box-shadow: 0px 0px 20px 13px black;
+}
+#header > * {
+  padding: 8px 10px;
+  border-radius: 4px;
+}
+#header > .logo {
+  font-size: 26px;
+}
+#header > .bars {
+  text-align: start;
+  border: none;
+  color: white;
+  font-size: 30px;
+}
+#header > .topNav {
+  display: none; /*display: will add if min-width: 768px*/
+  justify-content: stretch;
+  align-items: stretch;
+  gap: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.topNav > * {
+  padding: 16px 8px;
+  border-radius: 8px;
+  border: 1px solid rgb(40, 40, 40);
+  background-color: rgb(50, 50, 50);
+  transition: background-color 0.3s ease;
+}
+
+/*-------------------------------------
+sidebar left
+----------------------------------------*/
+
+#sidebar {
+  width: 60vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  background-color: rgb(20, 20, 20);
+  border-right: 1px solid rgb(40, 40, 40);
+  z-index: 3;
+}
+
+#sidebar > * {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  text-align: start;
+  padding: 5px 0px 5px 18px;
+  border-radius: 5px;
+  width: 95%;
+  font-size: larger;
+}
+
+#sidebar a:hover {
+  color: rgb(187, 134, 252);
+}
+
+#sidebar > :first-child {
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  font-size: 26px;
+}
+#sidebar > :last-child {
+  margin-top: auto;
+}
+
+#sidebar > :first-child,
+#sidebar > :last-child {
+  padding: 20px;
+}
+
+/*----expose and hide animation start from here-----*/
+#sidebar {
+  transition: left 0.3s ease;
+}
+.sidebarBefore {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  display: block;
+  width: 100vw;
+  z-index: 2;
+
+  transition: all 0.3s ease;
+}
+#sidebar,
+.sidebarBefore {
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+}
+#sidebar.hide {
+  left: -100%;
+}
+#sidebar.expose {
+  left: 0%;
+}
+
+.sidebarBefore.hide {
+  left: -100%;
+  opacity: 0;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.sidebarBefore.expose {
+  left: 0%;
+  opacity: 1;
+  border-radius: 0%;
+}
+/*----expose and hide animation end here-----*/
+
+/*-------------------------------------
+ footer 
+----------------------------------------*/
+
+#footer {
+  width: 100%;
+  background-color: rgb(20, 20, 20);
+  text-align: center;
+}
+.footerLinks {
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactIcon .links {
+  flex-direction: row;
+}
+
+#footer div h3 {
+  padding-bottom: 15px;
+}
+#footer div p,
+#footer div a {
+  color: rgb(200, 200, 200);
+  padding: 5px 8px;
+}
+#footer .footerBottom {
+  border-top: 1px solid rgb(51, 51, 51);
+  margin: 0px auto;
+  padding: 10px 0px;
+}
+#footer p {
+  color: rgb(245, 245, 245);
+}
+
+/*-------------------------------------
+ responsive design
+----------------------------------------*/
+
+/* Mobile S */
+@media (min-width: 320px) {
+  #container {
+    max-width: 320px;
+  }
+}
+
+/* Mobile M */
+@media (min-width: 375px) {
+  #container {
+    max-width: 375px;
+  }
+
+  .btnGroup {
+    flex-direction: row;
+  }
+}
+
+/* Mobile L */
+@media (min-width: 425px) {
+  #container {
+    max-width: 425px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  #container {
+    max-width: 768px;
+  }
+
+  .footerLinks {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .bars {
+    display: none;
+  }
+  #sidebar {
+    display: none;
+  }
+  .sidebarBefore {
+    display: none;
+  }
+  #header .topNav {
+    display: grid;
+    grid-auto-flow: column;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  #container {
+    max-width: 1024px;
+  }
+  #header > .logo {
+    text-align: start;
+  }
+  #header .topNav > *:hover {
+    background-color: rgb(60, 60, 60);
+  }
+}
+
+/* Laptop L */
+@media (min-width: 1440px) {
+  #container {
+    max-width: 1440px;
+  }
+  #header {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 4k */
+@media (min-width: 2560px) {
+  #container {
+    max-width: 2560px;
+  }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vacuoleRant02</title>
+
+    <!-- linking css files -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/pagesCss/home.css" />
+
+    <!-- linking font-awesome files -->
+    <link rel="stylesheet" href="./css/fontawesome/all.min.css" />
+    <link rel="stylesheet" href="./css/fontawesome/fontawesome.min.css" />
+  </head>
+
+  <body id="homePage">
+    <!--============================
+    container
+    =================================-->
+    <div id="container">
+      <!--============================
+      sidebar
+      =================================-->
+      <nav id="sidebar" class="hide">
+        <!-------------------------------
+        close Icon
+        --------------------------------->
+        <button class="xIcon">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <a href="index.html" class="active"
+          ><i class="fa-solid fa-house"></i> Home</a
+        >
+        <a href="./pages/booking.html"
+          ><i class="fa-solid fa-bus"></i> Book a Bus</a
+        >
+        <a href="./pages/busTickets.html"
+          ><i class="fa-solid fa-ticket"></i> Bus Tickets</a
+        >
+
+        <!-------------------------------
+        admin access
+        --------------------------------->
+        <a href="./pages/admin.html"
+          ><i class="fa-regular fa-circle-user"></i> Sign Up</a
+        >
+      </nav>
+      <div class="sidebarBefore hide"></div>
+
+      <!--============================
+      header
+      =================================-->
+
+      <header id="header">
+        <!-------------------------------
+        bars Icon
+        --------------------------------->
+        <button class="bars">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <h1 class="logo">Bus Booking</h1>
+
+        <!-------------------------------
+        negation for desktop view
+        --------------------------------->
+        <div class="topNav">
+          <a href="index.html" class="active"
+            ><i class="fa-solid fa-house"></i> Home</a
+          >
+          <a href="./pages/booking.html"
+            ><i class="fa-solid fa-bus"></i> Book a Bus</a
+          >
+          <a href="./pages/busTickets.html"
+            ><i class="fa-solid fa-ticket"></i> Bus Tickets</a
+          >
+          <a href="./pages/admin.html"
+            ><i class="fa-regular fa-circle-user"></i> Sign Up</a
+          >
+        </div>
+      </header>
+
+      <!--============================
+      main
+      =================================-->
+
+      <main id="main">
+        <!-------------------------------
+        heading
+        --------------------------------->
+        <div class="heading">
+          <h2>Welcome to the Bus Booking Service</h2>
+          <p>Book your bus tickets with ease.</p>
+          <a><i class="fa-solid fa-ticket"></i> Bus Tickets</a>
+          <a><i class="fa-solid fa-bus"></i> Bus Booking</a>
+        </div>
+
+        <!-------------------------------
+        social account links show in large screen
+        --------------------------------->
+        <div class="socialLinks">
+          <a href="#" class=""><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class=""><i class="fab fa-twitter"></i></a>
+          <a href="#" class=""><i class="fab fa-instagram"></i></a>
+          <a href="#" class=""><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <!-------------------------------
+        sub page link show in large screen
+        --------------------------------->
+        <div class="subPageLinks">
+          <a href="index.html" class="">
+            <i class="fa-solid fa-house"></i>
+            <span>&nbsp; Home</span>
+          </a>
+
+          <a href="./pages/booking.html" class="">
+            <i class="fa-solid fa-bus"></i>
+            <span>&nbsp; Book a Bus</span>
+          </a>
+
+          <a href="./pages/busTickets.html" class="">
+            <i class="fa-solid fa-ticket"></i>
+            <span>&nbsp; Bus Tickets</span>
+          </a>
+
+          <a href="./pages/admin.html" class="">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>&nbsp; Admin Panel</span>
+          </a>
+        </div>
+
+        <!------------------------------------
+        contact us
+        --------------------------------------->
+        <div class="contactUs">
+          <h3>Contact Us</h3>
+          <p>123 Bus Lane, Transport City</p>
+          <p>Email: info@busbooking.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+      </main>
+
+      <!--============================
+      footer
+      =================================-->
+      <footer id="footer">
+        <div class="footerLinks">
+          <div>
+            <h3>Quick Links</h3>
+            <div class="links">
+              <a href="index.html" class="active"
+                ><i class="fa-solid fa-house"></i> Home</a
+              >
+              <a href="./pages/booking.html"
+                ><i class="fa-solid fa-bus"></i> Book a Bus</a
+              >
+              <a href="./pages/busTickets.html"
+                ><i class="fa-solid fa-ticket"></i> Bus Tickets</a
+              >
+              <a href="./pages/admin.html"
+                ><i class="fa-solid fa-screwdriver-wrench"></i> Admin Panel</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <h3>Contact Us</h3>
+            <div class="links">
+              <p>123 Bus Lane, Transport City</p>
+              <p>Email: info@busbooking.com</p>
+              <p>Phone: +123 456 7890</p>
+            </div>
+          </div>
+
+          <div class="contactIcon">
+            <h3>Follow Us</h3>
+            <div class="links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footerBottom">
+          <p>&copy; 2024 Bus Booking. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <script src="js/scripts.js"></script>
+    </div>
+  </body>
+</html>
